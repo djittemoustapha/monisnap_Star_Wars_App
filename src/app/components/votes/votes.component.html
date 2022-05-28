@@ -1,0 +1,37 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+
+  <div fxFlex="50%">
+    <div class="container" fxLayout="row" fxLayoutAlign="center none">
+
+      <h2>Were we let in for our looks? No. Will we be judged on them? Yes.</h2>
+    </div>
+    <div class="container" fxLayout="row" fxLayoutAlign="center none">
+      <h3>Who's best? Click to Choose.</h3>
+    </div>
+    <mat-card>
+      <mat-card-content>
+        <mat-grid-list cols="2" *ngIf="currentCouple.length > 1">
+          <mat-grid-tile *ngFor="let couple of currentCouple">
+            <mat-card class="example-card" (click)=" vote(couple.id)">
+              <mat-card-header>
+                <mat-card-title>{{ couple.name}}</mat-card-title>
+              </mat-card-header>
+              <img mat-card-image [src]="couple.pic" [alt]="couple.name">
+              <mat-card-content>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <section *ngIf="currentCouple.length < 1">
+          <div class="example-label">End of votes Click on restart</div>
+        </section>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button (click)="initVote()">Restart</button>
+        <button mat-button (click)="showTopTen()">Top 10</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+</div>

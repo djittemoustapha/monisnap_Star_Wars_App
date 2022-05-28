@@ -1,0 +1,30 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+
+  <div fxFlex="50%">
+    <div class="container" fxLayout="row" fxLayoutAlign="center none">
+
+      <h2>Top Faces.</h2>
+    </div>
+    <mat-card>
+      <mat-card-content>
+        <mat-grid-list cols="2">
+          <mat-grid-tile *ngFor="let character of topTen">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>{{ character.name}} {{ character.stars}}  votes</mat-card-title>
+              </mat-card-header>
+              <img mat-card-image [src]="character.pic" [alt]="character.name">
+              <mat-card-content>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button (click)="goToVote()">Back to vote</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+</div>

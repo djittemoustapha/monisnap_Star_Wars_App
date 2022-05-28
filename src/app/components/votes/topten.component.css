@@ -1,0 +1,27 @@
+.single-cards {
+  margin: 20px 0;
+}
+
+.single-card .mat-card-avatar {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.single-card .mat-icon {
+  font-size: 55px;
+}
+
+.projects-card>mat-card-content {
+  max-height: 200px;
+  overflow: auto;
+}
+img {
+  height: fit-content; 
+  max-height: 300px !important; 
+  object-position: center; 
+}
+.mat-card-header-text:hover {
+  color:red;
+  text-decoration:none;
+  }
